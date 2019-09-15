@@ -15,6 +15,7 @@
 
 body {
   background-color: #D6F272;
+  height: 100vh
 }
 
 header {
@@ -26,6 +27,8 @@ header {
   text-align: center;
   border: 1px solid #5D8C2E;
   border-radius: 5px;
+  width: 44%;
+  margin: 0 3%;
 }
 
 .p-image-card:hover {
