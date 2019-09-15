@@ -1,6 +1,7 @@
 import React from 'react';
 import pokeballicon from './pokeball-icon.svg';
 import './App.css';
+import { get } from 'https';
 
 class App extends React.Component {
 
@@ -45,10 +46,6 @@ class Game extends React.Component {
     });
   };
 
-  componentDidMount = () => {
-    this.getPokemon();
-  }
-  
   randNumGen = () => {
     const nums = [];
   
@@ -63,10 +60,28 @@ class Game extends React.Component {
     return nums;
   }
 
+  componentDidMount = () => {
+    this.getPokemon();
+  }
+
+  handleClick = (e) => {
+    if (e.target.firstChild.src === this.state.selectedPokemon.sprites.front_default) {
+      console.log('correct');
+    } else {
+      console.log('incorrect');
+    }
+    setTimeout(this.getPokemon, 100);
+  }
+  
   render() {
     return (
       <div className="container">
-        <PokemonArea pokemon={this.state.pokemon} selected={this.state.selectedPokemon} />
+        {/* <GameInfo score={this.state.score}/> */}
+        <PokemonArea 
+        pokemon={this.state.pokemon} 
+        selected={this.state.selectedPokemon}
+        handleClick={this.handleClick}
+      />
       </div>
     );
   }
@@ -78,7 +93,7 @@ const PokemonArea = (props) => {
       <div 
         className="p-image-card my-3" 
         key={`pokemon-${poke.id}`}
-        /* onClick={makeChoice} */>
+        onClick={props.handleClick} >
         <img
           className="p-image"
           src={poke.sprites.front_default}
