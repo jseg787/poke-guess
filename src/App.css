@@ -34,3 +34,7 @@ header {
 .p-image-card:hover {
   background-color: rgba(93, 140, 46, 0.315)
 }
+
+.selected-poke-name {
+  text-transform: capitalize;
+}

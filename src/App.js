@@ -25,7 +25,8 @@ const Header = () => {
 class Game extends React.Component {
   state = {
     score: 0,
-    pokemon: []
+    pokemon: [],
+    selectedPokemon: {}
   }
   
   getPokemon = async () => {
@@ -38,7 +39,10 @@ class Game extends React.Component {
       pokeArr.push(pokeHolder);
     }
   
-    this.setState({ pokemon: pokeArr });
+    this.setState({ 
+      pokemon: pokeArr,
+      selectedPokemon: pokeArr[Math.floor(Math.random() * 4)]
+    });
   };
 
   componentDidMount = () => {
@@ -62,41 +66,48 @@ class Game extends React.Component {
   render() {
     return (
       <div className="container">
-        <PokemonArea pokemon={this.state.pokemon}/>
+        <PokemonArea pokemon={this.state.pokemon} selected={this.state.selectedPokemon} />
       </div>
     );
   }
 }
 
-class PokemonArea extends React.Component {
-  
-
-
-  render() {
-    const pokemon = this.props.pokemon.map(poke => {
-      return (
-        <div className="p-image-card my-3" key={`pokemon-${poke.id}`}/* onClick={makeChoice} */>
-          <img
-            className="p-image"
-            src={poke.sprites.front_default}
-            alt=""
-          />
-        </div>
-      );
-    });
-
+const PokemonArea = (props) => {
+  const pokemon = props.pokemon.map(poke => {
     return (
-      <div>
-        {pokemon.length > 0 ? (
-          <div className="row">
-            {pokemon}
-          </div>
-        ) : (
-            <PokeballSpinner />
-          )}
+      <div 
+        className="p-image-card my-3" 
+        key={`pokemon-${poke.id}`}
+        /* onClick={makeChoice} */>
+        <img
+          className="p-image"
+          src={poke.sprites.front_default}
+          alt=""
+        />
       </div>
     );
-  }
+  });
+
+  return (
+    <div>
+      {pokemon.length > 0 ? (
+        <div>
+        <PokemonName selected={props.selected} />
+        <div className="row">
+          {pokemon}
+        </div>
+        </div>
+      ) : (
+        <PokeballSpinner />
+      )}
+    </div>
+  );
+}
+
+const PokemonName = (props) => {
+  return (
+    <h2 className="selected-poke-name" style={{textAlign: 'center'}}>{props.selected.name}</h2>
+  )
 }
 
 const PokeballSpinner = () => {
@@ -107,6 +118,5 @@ const PokeballSpinner = () => {
     </div>
   );
 }
-
 
 export default App;
