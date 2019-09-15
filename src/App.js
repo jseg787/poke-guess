@@ -67,6 +67,7 @@ class Game extends React.Component {
   handleClick = (e) => {
     if (e.target.firstChild.src === this.state.selectedPokemon.sprites.front_default) {
       console.log('correct');
+      this.setState({score: this.state.score + 1});
     } else {
       console.log('incorrect');
     }
@@ -76,7 +77,7 @@ class Game extends React.Component {
   render() {
     return (
       <div className="container">
-        {/* <GameInfo score={this.state.score}/> */}
+        <GameInfo score={this.state.score}/>
         <PokemonArea 
         pokemon={this.state.pokemon} 
         selected={this.state.selectedPokemon}
@@ -117,6 +118,12 @@ const PokemonArea = (props) => {
       )}
     </div>
   );
+}
+
+const GameInfo = (props) => {
+  return (
+    <h1>{props.score}</h1>
+  )
 }
 
 const PokemonName = (props) => {
