@@ -14,25 +14,25 @@
 }
 
 body {
-  background-color: #D6F272;
-  height: 100vh
+  background-color: #d6f272;
+  height: 100vh;
 }
 
 header {
-  background-color: #5D8C2E;
-  color: #EFF299;
+  background-color: #5d8c2e;
+  color: #eff299;
 }
 
 .p-image-card {
   text-align: center;
-  border: 1px solid #5D8C2E;
+  border: 1px solid #5d8c2e;
   border-radius: 5px;
-  width: 44%;
-  margin: 0 3%;
+  // width: 44%;
+  // margin: 0 3%;
 }
 
 .p-image-card:hover {
-  background-color: rgba(93, 140, 46, 0.315)
+  background-color: rgba(93, 140, 46, 0.315);
 }
 
 .p-image {
