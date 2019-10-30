@@ -40,6 +40,7 @@ const Game = () => {
     }
 
     setPokemon(pokeArr);
+    // select a random pokemon from the 4 obtained
     setSelectedPokemon(pokeArr[Math.floor(Math.random() * 4)]);
   };
 
@@ -57,13 +58,13 @@ const Game = () => {
 
   const handleClick = e => {
     if (e.target.firstChild.src === selectedPokemon.sprites.front_default) {
-      console.log("correct");
-      // this.setState({ score: this.state.score + 1 });
+      // show correct
       setScore(score + 1);
+      setPokemon([]);
+      setSelectedPokemon({});
     } else {
-      console.log("incorrect");
+      // show incorrect 
     }
-    // setTimeout(this.getPokemon, 100);
   };
 
   return (

@@ -27,8 +27,6 @@ header {
   text-align: center;
   border: 1px solid #5d8c2e;
   border-radius: 5px;
-  // width: 44%;
-  // margin: 0 3%;
 }
 
 .p-image-card:hover {
@@ -41,4 +39,8 @@ header {
 
 .selected-poke-name {
   text-transform: capitalize;
+}
+
+.no-click {
+  pointer-events: none;
 }
