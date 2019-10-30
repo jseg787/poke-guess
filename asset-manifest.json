@@ -1,16 +1,16 @@
 {
   "files": {
-    "main.css": "/poke-guess/static/css/main.c2a74bc4.chunk.css",
-    "main.js": "/poke-guess/static/js/main.ab08c5fa.chunk.js",
-    "main.js.map": "/poke-guess/static/js/main.ab08c5fa.chunk.js.map",
+    "main.css": "/poke-guess/static/css/main.7f205941.chunk.css",
+    "main.js": "/poke-guess/static/js/main.816adbc6.chunk.js",
+    "main.js.map": "/poke-guess/static/js/main.816adbc6.chunk.js.map",
     "runtime~main.js": "/poke-guess/static/js/runtime~main.f7229598.js",
     "runtime~main.js.map": "/poke-guess/static/js/runtime~main.f7229598.js.map",
-    "static/js/2.7ad8ccf6.chunk.js": "/poke-guess/static/js/2.7ad8ccf6.chunk.js",
-    "static/js/2.7ad8ccf6.chunk.js.map": "/poke-guess/static/js/2.7ad8ccf6.chunk.js.map",
+    "static/js/2.3dd22442.chunk.js": "/poke-guess/static/js/2.3dd22442.chunk.js",
+    "static/js/2.3dd22442.chunk.js.map": "/poke-guess/static/js/2.3dd22442.chunk.js.map",
     "index.html": "/poke-guess/index.html",
-    "precache-manifest.a9a04ded2cbb67a9e9bec81bbf6e9812.js": "/poke-guess/precache-manifest.a9a04ded2cbb67a9e9bec81bbf6e9812.js",
+    "precache-manifest.d427342463f20146c66f9883f6452cd4.js": "/poke-guess/precache-manifest.d427342463f20146c66f9883f6452cd4.js",
     "service-worker.js": "/poke-guess/service-worker.js",
-    "static/css/main.c2a74bc4.chunk.css.map": "/poke-guess/static/css/main.c2a74bc4.chunk.css.map",
-    "static/media/pokeball-icon.svg": "/poke-guess/static/media/pokeball-icon.67d3cdb8.svg"
+    "static/css/main.7f205941.chunk.css.map": "/poke-guess/static/css/main.7f205941.chunk.css.map",
+    "static/media/pokeball-icon.svg": "/poke-guess/static/media/pokeball-icon.22768e36.svg"
   }
 }

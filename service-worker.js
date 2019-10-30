@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/poke-guess/precache-manifest.a9a04ded2cbb67a9e9bec81bbf6e9812.js"
+  "/poke-guess/precache-manifest.d427342463f20146c66f9883f6452cd4.js"
 );
 
 self.addEventListener('message', (event) => {
