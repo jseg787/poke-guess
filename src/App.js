@@ -20,7 +20,6 @@ const Header = () => {
 };
 
 const Game = () => {
-
   const [score, setScore] = useState(0);
   const [pokemon, setPokemon] = useState([]);
   const [selectedPokemon, setSelectedPokemon] = useState({});
@@ -36,14 +35,9 @@ const Game = () => {
     const pokeNumArr = randNumGen();
     const pokeArr = [];
     for (let num of pokeNumArr) {
-      const pokeHolder = await P.resource(`/api/v2/pokemon/${num}/`);
-      pokeArr.push(pokeHolder);
+      const pokemonData = await P.resource(`/api/v2/pokemon/${num}/`);
+      pokeArr.push(pokemonData);
     }
-
-    // this.setState({
-    //   pokemon: pokeArr,
-    //   selectedPokemon: pokeArr[Math.floor(Math.random() * 4)]
-    // });
 
     setPokemon(pokeArr);
     setSelectedPokemon(pokeArr[Math.floor(Math.random() * 4)]);
@@ -51,16 +45,13 @@ const Game = () => {
 
   const randNumGen = () => {
     const nums = [];
-    const prevNums = [];
-
     while (nums.length < 4) {
       let currNum = Math.ceil(Math.random() * 151);
-      if (!prevNums.includes(currNum)) {
+      // if the number is not already in the array
+      if (!nums.includes(currNum)) {
         nums.push(currNum);
-        prevNums.push(currNum);
       }
     }
-
     return nums;
   };
 
