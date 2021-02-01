@@ -1,34 +1,29 @@
-import React from "react";
-import PokemonName from "./PokemonName";
-import PokeballSpinner from "./PokeballSpinner";
+import React from 'react';
+import PokemonName from './PokemonName';
+import PokeballSpinner from './PokeballSpinner';
+import Pokemon from './Pokemon';
 
-const PokemonArea = props => {
-  const pokemon = props.pokemon.map(poke => {
-    return (
-      <div className="col-6 col-md-3 my-3" key={poke.id}>
-        <div
-          className="p-image-card"
-          key={`pokemon-${poke.id}`}
-          onClick={props.handleClick}
-        >
-          <img className="p-image" src={poke.sprites.front_default} alt="" />
-        </div>
-      </div>
-    );
-  });
+const PokemonArea = (props) => {
+	const pokemon = props.pokemon.map((poke) => {
+		return (
+			<Pokemon key={poke.id} id={poke.id} sprite={poke.sprites.front_default} handleClick={props.handleClick} />
+		);
+	});
 
-  return (
-    <div>
-      {pokemon.length > 0 ? (
-        <div>
-          <PokemonName selected={props.selected} />
-          <div className="row">{pokemon}</div>
-        </div>
-      ) : (
-        <PokeballSpinner />
-      )}
-    </div>
-  );
+	let result = '';
+
+	if (pokemon.length === 0) {
+		result = <PokeballSpinner />;
+	} else {
+		result = (
+			<div>
+				<PokemonName selected={props.selected} />
+				<div className="row">{pokemon}</div>
+			</div>
+		);
+	}
+
+	return result;
 };
 
 export default PokemonArea;
